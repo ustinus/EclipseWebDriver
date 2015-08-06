@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Google {
+public class GoogleTest {
 	public static final String URL = "http://www.google.com";	
 	public static WebDriver driver;	
 		

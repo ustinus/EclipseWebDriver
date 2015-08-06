@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Craigslist {
+public class CraigslistTest {
 
 public static final String URL = "http://www.craigslist.org";	
 public static WebDriver driver;	
