@@ -21,7 +21,7 @@ public class GoogleTest {
 
 	@Test
 	public void googleTest1() {
-		System.out.println("GoogleTest1");
+		System.out.println("GoogleTest1 ");
 	}
 
 	@Test
