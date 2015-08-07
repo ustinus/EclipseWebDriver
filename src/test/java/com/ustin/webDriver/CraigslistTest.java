@@ -1,5 +1,8 @@
 package com.ustin.webDriver;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,17 +31,33 @@ public void BeforeMethod() {
 	driver.get(URL);
 }
 
+//Pulls the List of all Audi cars for sale listed on 
+//first page of search results
 @Test
 public void craigsListTest1() {
 	WebElement searchField = driver.findElement(By.id("query"));
 	searchField.sendKeys("Audi");
 	searchField.submit();
 	
+	try {
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("listview"))).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[class='mode button sel']")));
+	}
+	catch (Exception e) {
+		System.out.println("List View Already Clicked");
+	};
 	
-	wait.until(ExpectedConditions.elementToBeClickable(By.id("listview"))).click();
-	String result = driver.findElement(By.xpath(".//*[@id='searchform']/div[2]/div[3]/p[1]/span/span[2]/a")).getText();
+	List<WebElement> result = driver.findElements(By.cssSelector("a[class='hdrlnk']"));
 	
-	System.out.println("Test1 completed: " + result);
+	int counter = 1;
+	
+	for(WebElement car: result) {
+		System.out.println(counter + " : " + car.getText());
+		counter ++;
+	}
+	
+	
+	
 }
 
 @Test
