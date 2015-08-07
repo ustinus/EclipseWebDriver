@@ -55,9 +55,7 @@ public void craigsListTest1() {
 		System.out.println(counter + " : " + car.getText());
 		counter ++;
 	}
-	
-	
-	
+	System.out.println(" -= Test Completed =- ");	
 }
 
 @Test
@@ -67,7 +65,7 @@ public void craigsListTest2() {
 
 @Test
 public void craigsListTest3() {
-	System.out.println("Test2");
+	System.out.println("Test3");
 }
 
 @AfterClass
